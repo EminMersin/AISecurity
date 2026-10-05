@@ -1,0 +1,117 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Security Rehberli Öğrenme</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="workbench-page">
+  <header class="reader-top">
+    <a class="brand" href="index.html">AI Security Rehberi</a>
+    <span>Rehberli öğrenme</span>
+  </header>
+
+  <main class="workbench-shell">
+    <section class="workbench-hero">
+      <p class="eyebrow">Guided Learning</p>
+      <h1>Rehberli Öğrenme Merkezi</h1>
+      <p>Kavramları hızlı bul, doğru modüle yönlen, lab senaryosu üret ve kişisel ilerleme raporunu Markdown olarak dışa aktar.</p>
+    </section>
+
+    <nav class="anchor-nav" aria-label="Sayfa bölümleri">
+      <a href="#path">Öğrenme Yolu</a>
+      <a href="#search">Arama</a>
+      <a href="#glossary">Sözlük</a>
+      <a href="#lab-builder">Lab Üretici</a>
+      <a href="#export">Rapor</a>
+    </nav>
+
+    <section id="path" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Nereden Başlamalı?</p>
+        <h2>Rol Bazlı Öğrenme Yolu</h2>
+        <p>Hedef rolünü seç; hangi sırayla çalışman gerektiğini ve hangi çıktıları üretmen gerektiğini gör.</p>
+      </div>
+      <div class="role-picker">
+        <button data-role="starter">Başlangıç</button>
+        <button data-role="security">Security Analyst</button>
+        <button data-role="builder">AI Builder</button>
+        <button data-role="architect">Architect</button>
+      </div>
+      <div id="role-plan" class="plan-box"></div>
+    </section>
+
+    <section id="search" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Hızlı Bul</p>
+        <h2>Modül ve Lab Arama</h2>
+        <p>Örnek aramalar: RAG, MCP, identity, prompt injection, pentest, conditional access.</p>
+      </div>
+      <input id="site-search" type="search" placeholder="Kavram veya konu ara...">
+      <div id="search-results" class="search-results"></div>
+    </section>
+
+    <section id="glossary" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Kavram Haritası</p>
+        <h2>AI Security Sözlüğü</h2>
+        <p>Kavram kartları teorik tanım, güvenlik etkisi ve ilgili doküman bağlantısı içerir.</p>
+      </div>
+      <div id="glossary-grid" class="glossary-grid"></div>
+    </section>
+
+    <section id="lab-builder" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Uygulama</p>
+        <h2>Lab Senaryosu Üretici</h2>
+        <p>Çalışmak istediğin alanı seç; site sana görev, risk ve beklenen çıktı üretsin.</p>
+      </div>
+      <form id="lab-form" class="form-grid compact">
+        <label>Odak alanı
+          <select name="focus">
+            <option value="rag">RAG güvenliği</option>
+            <option value="agent">Agent tool calling</option>
+            <option value="identity">Identity ve access</option>
+            <option value="pentest">Pentest doğrulama</option>
+          </select>
+        </label>
+        <label>Zorluk
+          <select name="difficulty">
+            <option value="beginner">Başlangıç</option>
+            <option value="intermediate">Orta</option>
+            <option value="advanced">İleri</option>
+          </select>
+        </label>
+        <label>Çıktı tipi
+          <select name="output">
+            <option value="checklist">Checklist</option>
+            <option value="report">Kısa rapor</option>
+            <option value="threat-model">Threat model</option>
+          </select>
+        </label>
+      </form>
+      <div class="result-box">
+        <button id="generate-lab" type="button">Senaryo üret</button>
+        <button id="copy-lab" type="button">Kopyala</button>
+      </div>
+      <textarea id="lab-output" class="output-area" readonly></textarea>
+    </section>
+
+    <section id="export" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Portföy Çıktısı</p>
+        <h2>İlerleme Raporu Dışa Aktar</h2>
+        <p>Checklist, quiz skoru ve son threat model çıktısını Markdown raporu olarak üret.</p>
+      </div>
+      <div class="result-box">
+        <button id="generate-progress-report" type="button">Rapor üret</button>
+        <button id="copy-progress-report" type="button">Kopyala</button>
+      </div>
+      <textarea id="progress-output" class="output-area" readonly></textarea>
+    </section>
+  </main>
+
+  <script src="assets/learn.js"></script>
+</body>
+</html>

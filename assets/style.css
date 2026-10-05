@@ -570,3 +570,62 @@ textarea {
     position: static;
   }
 }
+
+
+.role-picker {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 16px;
+}
+
+.role-picker button.active {
+  background: var(--brand-dark);
+  color: #fff;
+}
+
+.plan-box {
+  padding: 18px;
+  border-radius: 16px;
+  background: var(--bg-soft);
+}
+
+.plan-box ol {
+  margin: 0;
+}
+
+.search-results,
+.glossary-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 14px;
+  margin-top: 16px;
+}
+
+.search-card,
+.glossary-card {
+  padding: 18px;
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  background: #fff;
+}
+
+.search-card span {
+  display: inline-flex;
+  padding: 3px 8px;
+  border-radius: 999px;
+  background: var(--bg-soft);
+  color: var(--brand-dark);
+  font-size: .76rem;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.search-card h3,
+.glossary-card h3 {
+  margin: 10px 0 6px;
+}
+
+.glossary-card p {
+  margin: 8px 0;
+}

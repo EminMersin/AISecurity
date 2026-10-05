@@ -65,6 +65,14 @@ GitHub Pages için hazırdır. Ana interaktif sayfa: [`index.html`](index.html)
     └── threat-model-template.md
 ```
 
+
+## Aktif Öğrenme Sayfaları
+
+- `index.html`: Dashboard ve öğrenme modülü girişleri.
+- `viewer.html`: Markdown içerikleri okunabilir HTML arayüzünde açar.
+- `workbench.html`: Quiz, threat model canvas, pentest checker ve risk simülasyonları.
+- `learn.html`: Rol bazlı öğrenme yolu, arama, kavram sözlüğü, lab senaryosu üretici ve ilerleme raporu.
+
 ## Hızlı Başlangıç
 
 Bu site build gerektirmez. GitHub Pages ayarlarında repo root klasörünü yayın kaynağı olarak seçmek yeterlidir.
