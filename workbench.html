@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Security Aktif Öğrenme Alanı</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body class="workbench-page">
+  <header class="reader-top">
+    <a class="brand" href="index.html">AI Security Rehberi</a>
+    <span>Aktif öğrenme alanı</span>
+  </header>
+
+  <main class="workbench-shell">
+    <section class="workbench-hero">
+      <p class="eyebrow">Hands-on Learning</p>
+      <h1>Aktif Öğrenme Alanı</h1>
+      <p>Quiz çöz, threat model üret, pentest bulgusu doğrula ve AI agent/RAG risklerini küçük senaryolarla test et. Tüm işlemler tarayıcıda çalışır; backend yoktur.</p>
+    </section>
+
+    <nav class="anchor-nav" aria-label="Sayfa bölümleri">
+      <a href="#quiz">Quiz</a>
+      <a href="#threat-canvas">Threat Model Canvas</a>
+      <a href="#pentest-checker">Pentest Kontrolü</a>
+      <a href="#simulators">Simülasyonlar</a>
+    </nav>
+
+    <section id="quiz" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Kendini Test Et</p>
+        <h2>AI Security Quiz</h2>
+        <p>Her soru tek doğru cevap içerir. Sonuçlar localStorage'a kaydedilir.</p>
+      </div>
+      <div id="quiz-list" class="quiz-list"></div>
+      <div class="result-box">
+        <button id="grade-quiz">Quiz'i değerlendir</button>
+        <strong id="quiz-result">Henüz değerlendirilmedi.</strong>
+      </div>
+    </section>
+
+    <section id="threat-canvas" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Final Çıktı</p>
+        <h2>AI Threat Model Canvas</h2>
+        <p>Alanları doldur, ardından Markdown threat model çıktısını üret.</p>
+      </div>
+      <form id="threat-form" class="form-grid">
+        <label>Sistem adı <input name="system" placeholder="AI Pentest Analiz Agenti"></label>
+        <label>AI kullanım amacı <textarea name="purpose" placeholder="Pentest raporlarını analiz eder ve düzeltme önerisi üretir."></textarea></label>
+        <label>Korunan assetler <textarea name="assets" placeholder="Pentest raporları, API tokenları, sistem promptları"></textarea></label>
+        <label>Threat actorlar <textarea name="actors" placeholder="Düşük yetkili kullanıcı, zararlı doküman yükleyici, kompromize servis hesabı"></textarea></label>
+        <label>Trust boundary'ler <textarea name="boundaries" placeholder="UI -> Backend, Agent -> Tool Server, RAG -> Vector DB"></textarea></label>
+        <label>Abuse case'ler <textarea name="abuse" placeholder="Prompt injection ile tool çağrısını yönlendirme"></textarea></label>
+        <label>Kontroller <textarea name="controls" placeholder="Least privilege, tool allowlist, human approval, RAG ACL"></textarea></label>
+        <label>Test planı <textarea name="tests" placeholder="Prompt injection testi, access control testi, tool abuse testi"></textarea></label>
+      </form>
+      <div class="result-box">
+        <button id="generate-threat-model">Markdown üret</button>
+        <button id="copy-threat-model" type="button">Kopyala</button>
+      </div>
+      <textarea id="threat-output" class="output-area" readonly></textarea>
+    </section>
+
+    <section id="pentest-checker" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Rapor Doğrulama</p>
+        <h2>Pentest Bulgusu Kontrol Aracı</h2>
+        <p>Bir bulgunun doğrulama kalitesini hızlıca puanla.</p>
+      </div>
+      <form id="pentest-form" class="form-grid compact">
+        <label>Bulgu başlığı <input name="title" placeholder="IDOR - Fatura görüntüleme"></label>
+        <label>Endpoint / bileşen <input name="target" placeholder="GET /api/invoices/{id}"></label>
+        <label>Kanıt özeti <textarea name="evidence" placeholder="Kullanıcı A, kullanıcı B faturası için 200 yanıtı alıyor."></textarea></label>
+      </form>
+      <div id="pentest-checks" class="check-grid"></div>
+      <div class="result-box">
+        <button id="score-pentest">Kaliteyi puanla</button>
+        <strong id="pentest-score">Henüz puanlanmadı.</strong>
+      </div>
+    </section>
+
+    <section id="simulators" class="learning-section">
+      <div class="section-heading">
+        <p class="eyebrow">Simülasyon</p>
+        <h2>RAG ve Agent Risk Simülatörleri</h2>
+        <p>Küçük seçimlerle hangi risklerin oluştuğunu gözlemle.</p>
+      </div>
+      <div class="sim-grid">
+        <article class="sim-card">
+          <h3>RAG Retrieval Riski</h3>
+          <label><input type="checkbox" class="rag-doc" value="public"> Public policy dokümanı</label>
+          <label><input type="checkbox" class="rag-doc" value="secret"> Hassas müşteri dokümanı</label>
+          <label><input type="checkbox" class="rag-doc" value="malicious"> Prompt injection içeren doküman</label>
+          <button id="run-rag-sim">RAG riskini hesapla</button>
+          <div id="rag-result" class="sim-result"></div>
+        </article>
+        <article class="sim-card">
+          <h3>Agent Tool Calling Riski</h3>
+          <label>Agent yetkisi
+            <select id="agent-permission">
+              <option value="least">Least privilege</option>
+              <option value="write">Issue yazma yetkisi</option>
+              <option value="admin">Admin/API geniş yetki</option>
+            </select>
+          </label>
+          <label><input type="checkbox" id="human-approval"> Kritik işlemde human approval var</label>
+          <label><input type="checkbox" id="tool-validation"> Tool parametre doğrulaması var</label>
+          <button id="run-agent-sim">Agent riskini hesapla</button>
+          <div id="agent-result" class="sim-result"></div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <script src="assets/workbench.js"></script>
+</body>
+</html>
