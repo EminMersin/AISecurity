@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>AI Security Öğrenme Rehberi</title>
+  <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+  <header class="hero">
+    <p class="eyebrow">AI Security • Agent Security • Threat Modeling</p>
+    <h1>AI Security Öğrenme ve Uygulama Rehberi</h1>
+    <p>LLM temellerinden agent güvenliğine, identity/access management konularından pentest raporu doğrulamaya kadar uygulamalı bir çalışma alanı.</p>
+    <div class="actions">
+      <a href="viewer.html?page=README.md">README</a>
+      <a href="viewer.html?page=docs/05-ai-threat-modeling.md">Threat Modeling</a>
+      <a href="viewer.html?page=labs/lab-01-local-llm-agent.md">Labları Başlat</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="grid">
+      <article>
+        <h2>1. Temel Kavramlar</h2>
+        <p>LLM, transformer, context window, embedding, RAG ve function calling kavramlarını sistem güvenliği açısından öğren.</p>
+        <a href="viewer.html?page=docs/01-ai-llm-temelleri.md">Dokümana git</a>
+      </article>
+      <article>
+        <h2>2. Agent Mimarisi</h2>
+        <p>Agentlerin nasıl karar verdiğini, araç çağırdığını, dış sistemlerle nasıl etkileştiğini ve hangi riskleri doğurduğunu incele.</p>
+        <a href="viewer.html?page=docs/02-agent-mimarisi.md">Dokümana git</a>
+      </article>
+      <article>
+        <h2>3. Identity ve Access</h2>
+        <p>Kullanıcı, servis, workload ve agent identity kavramlarını least privilege ve conditional access ile ilişkilendir.</p>
+        <a href="viewer.html?page=docs/03-identity-access-management.md">Dokümana git</a>
+      </article>
+      <article>
+        <h2>4. Pentest Doğrulama</h2>
+        <p>Pentest bulgularını yeniden üretme, kanıt kalitesini inceleme ve risk önerilerini doğrulama yöntemlerini öğren.</p>
+        <a href="viewer.html?page=docs/04-pentest-ve-rapor-dogrulama.md">Dokümana git</a>
+      </article>
+    </section>
+
+    <section class="panel">
+      <h2>Aktif Öğrenme Kontrol Listesi</h2>
+      <p>Bu liste tarayıcı localStorage üzerinde tutulur; GitHub Pages üzerinde kişisel ilerleme takibi için yeterlidir.</p>
+      <div id="checklist"></div>
+      <button id="reset">İlerlemeyi sıfırla</button>
+    </section>
+
+    <section class="timeline">
+      <h2>Önerilen 6 Haftalık Plan</h2>
+      <ol>
+        <li><strong>Hafta 1:</strong> LLM, transformer, context window, embedding, RAG temelleri.</li>
+        <li><strong>Hafta 2:</strong> Agent, function call, MCP, tool permission modeli.</li>
+        <li><strong>Hafta 3:</strong> Identity, IAM, RBAC, conditional access, least privilege.</li>
+        <li><strong>Hafta 4:</strong> Web pentest girişi, OWASP WSTG, rapor doğrulama.</li>
+        <li><strong>Hafta 5:</strong> AI agent pentest senaryoları, prompt injection, tool abuse, data leakage.</li>
+        <li><strong>Hafta 6:</strong> AI threat model dokümanı ve final review.</li>
+      </ol>
+    </section>
+  </main>
+
+  <footer>
+    <p>Bu site statik GitHub Pages için tasarlanmıştır. Harici build adımı gerektirmez.</p>
+  </footer>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
